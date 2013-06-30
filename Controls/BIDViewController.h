@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BIDViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *numberField;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
 
+- (IBAction)textFieldDoneEditing:(id)sender;
+- (IBAction)backgroundTap:(id)sender;
 @end
