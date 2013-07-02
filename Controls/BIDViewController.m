@@ -42,6 +42,33 @@
 }
 
 - (IBAction)buttonPressed:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"Are you sure?"
+                                  delegate:self
+                                  cancelButtonTitle:@"No"
+                                  destructiveButtonTitle:@"Yes"
+                                  otherButtonTitles:nil];
+    [actionSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if(buttonIndex != [actionSheet cancelButtonIndex]){
+        NSString *msg = nil;
+        
+        if(self.nameField.text.length > 0){
+            msg = [NSString stringWithFormat:@"Thank You, %@", self.nameField.text];
+        }else{
+            msg = @"Thank You";
+        }
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Task Completed"
+                              message:msg
+                              delegate:self
+                              cancelButtonTitle:@"Continue"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (IBAction)toggleControls:(UISegmentedControl *)sender {

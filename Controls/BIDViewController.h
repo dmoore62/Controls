@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BIDViewController : UIViewController
+@interface BIDViewController : UIViewController<UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *doSomethingButton;
 @property (weak, nonatomic) IBOutlet UISwitch *rightSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *leftSwitch;
