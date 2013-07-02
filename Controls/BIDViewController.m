@@ -40,4 +40,10 @@
     int progress = lroundf(sender.value);
     self.sliderLabel.text = [NSString stringWithFormat:@"%d", progress];
 }
+
+- (IBAction)switchChanged:(UISwitch *)sender {
+    BOOL setting = sender.isOn;
+    [self.leftSwitch setOn:setting animated:YES];
+    [self.rightSwitch setOn:setting animated:YES];
+}
 @end
