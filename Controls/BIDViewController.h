@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BIDViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *doSomethingButton;
 @property (weak, nonatomic) IBOutlet UISwitch *rightSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *leftSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *numberField;
@@ -18,5 +19,7 @@
 - (IBAction)textFieldDoneEditing:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
 - (IBAction)sliderChanged:(UISlider *)sender;
+- (IBAction)buttonPressed:(id)sender;
+- (IBAction)toggleControls:(UISegmentedControl *)sender;
 - (IBAction)switchChanged:(UISwitch *)sender;
 @end
